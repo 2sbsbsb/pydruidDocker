@@ -1,8 +1,0 @@
-FROM jupyter/minimal-notebook
-
-RUN pip install pydruid
-RUN pip install pydruid[pandas]
-RUN pip install pydruid[sqlalchemy]
-RUN pip install pydruid[cli]
-RUN python -mpip install -U pip
-RUN python -mpip install -U matplotlib
