@@ -1,8 +1,20 @@
 FROM jupyter/minimal-notebook
 
+USER jovyan
+# Add permanent pip/conda installs, data files, other user libs here
+# e.g., RUN pip install jupyter_dashboards
+
+RUN pip install --upgrade pip
 RUN pip install pydruid
 RUN pip install pydruid[pandas]
 RUN pip install pydruid[sqlalchemy]
 RUN pip install pydruid[cli]
-RUN python -mpip install -U pip
-RUN python -mpip install -U matplotlib
+RUN python -m pip install -U pip
+RUN python -m pip install -U matplotlib
+
+
+USER root
+COPY run.sh /
+RUN chmod +x /run.sh
+# Add permanent apt-get installs and other root commands here
+# e.g., RUN apt-get install npm nodejs
