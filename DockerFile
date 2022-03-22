@@ -10,8 +10,10 @@ RUN pip install pydruid[pandas]
 RUN pip install pydruid[sqlalchemy]
 RUN pip install pydruid[cli]
 RUN pip install openpyxl
+RUN pip install -U jupyter_console
 RUN python -m pip install -U pip
 RUN python -m pip install -U matplotlib
+
 
 
 USER root
